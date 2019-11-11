@@ -5,5 +5,5 @@ sleep 5
 ping 192.168.1.2
 dir
 sleep 2
-
+ping 192.168.1.10
 
