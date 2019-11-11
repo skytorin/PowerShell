@@ -7,3 +7,4 @@ dir
 sleep 2
 ping 192.168.1.10
 
+
