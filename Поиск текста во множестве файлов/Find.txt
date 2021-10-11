@@ -1,0 +1,19 @@
+# Поиск шаблона отчета по названию в хранилище filestream:
+Get-ChildItem -Path d:\applications\*_config -recurse |  Select-String -Pattern "find_text" 
+Get-ChildItem -Path D:\MSSQL\DATA\NS_KASKAD_dev_Filestream\d5688200\* -recurse |  Select-String -Pattern "!_Тест_ЛКП" 
+---
+# Список FileInfo объектов для всех файлов, содержащих шаблон:
+Get-ChildItem -Recurse filespec | Where-Object { Select-String pattern $_ -Quiet }
+ls -r filespec | ? { sls pattern $_ -q }
+---
+# Список имен файлов для всех файлов, содержащих шаблон:
+Get-ChildItem -Recurse filespec | Select-String pattern | Select-Object -Unique Path
+ls -r filespec | sls pattern | select -u Path
+---
+# Список FileInfo объектов для всех файлов, не содержащих шаблон:
+Get-ChildItem -Recurse filespec | Where-Object { !(Select-String pattern $_ -Quiet) }
+ls -r filespec | ? { !(sls pattern $_ -q) }
+---
+# Список имен файлов для всех файлов, не содержащих шаблон:
+(Get-ChildItem -Recurse filespec | Where-Object { !(Select-String pattern $_ -Quiet) }).FullName
+(ls -r filespec | ? { !(sls pattern $_ -q) }).FullName

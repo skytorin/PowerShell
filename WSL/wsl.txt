@@ -1,0 +1,11 @@
+# Список дистрибутивов и версия WSL
+wsl --list --verbose
+
+# Останов WSL
+wsl --shutdown
+
+# Переопределение версии WSL для дистрибутива
+wsl --set-version <distribution name> <versionNumber>
+
+# WSL2 как архитектура по умолчанию
+wsl --set-default-version 2

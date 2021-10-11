@@ -1,0 +1,17 @@
+# Создаём соединение
+$SqlServer = "vmtest";
+$SqlCatalog = "Clear2";
+$SqlConnection = New-Object System.Data.SqlClient.SqlConnection
+$SqlConnection.ConnectionString = "Server=$SqlServer; Database=$SqlCatalog; Integrated Security=True"
+
+# Открываем соединен
+$SqlConnection.Open()
+
+# Выполнение c выводом результата
+$SqlCmd = $SqlConnection.CreateCommand()
+$SqlCmd.CommandText = "select state from sys.databases"
+$objReader = $SqlCmd.ExecuteReader()
+while ($objReader.read()) {
+  echo $objReader.GetValue(0)
+}
+$objReader.close()

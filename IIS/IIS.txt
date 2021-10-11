@@ -1,0 +1,45 @@
+# Список пулов
+Import-Module Webadministration
+Get-ChildItem -Path IIS:\Sites
+
+# Список пулов
+Import-Module Webadministration
+Get-ChildItem -Path IIS:\AppPools\
+
+# Список сайтов на локальном хосте IIS:
+Get-IISSite
+
+# Список всех доступных счетчиков производительности дл€ службы Web Service:
+(Get-Counter -ListSet 'Web Service').counter
+
+# Общее количество текущих подключений локального IIS:
+Get-Counter -Counter "\Web Service(_Total)\Current Connections"
+
+# Общее количество текущих подключений удаленного IIS:
+Get-Counter -Counter "\Web Service(_Total)\Current Connections" -ComputerName vmtest
+
+#  оличество текущих подключений к IIS (все сайты) в разрезе сайтов:
+Get-CounterGet-Counter -Counter У\Web Service(*)\Current ConnectionsФ
+
+#Текущее колличество соединений к сайту с именем test_neosyntez на удаленном сервере:
+Get-Counter "web service(test_neosyntez)\current connections" -ComputerName vmtest
+Get-Counter "web service(edu)\current connections" -ComputerName ioserver.neolant.loc
+
+
+netsh http show urlacl
+
+# Посмотреть, каким URL какие очереди подключены, и какие процессы с этими очередями связаны можно командой 
+netsh http show servicestate requestq
+
+
+Get-WebBinding 
+
+===
+ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ:
+$env:systemroot
+$env:computername
+$env:userdomain
+Пример:
+$HostName="$env:computername"
+$List_POOL_NAME="C:\temp\$($HostName)_List_Pool_IIS.txt"
+===
