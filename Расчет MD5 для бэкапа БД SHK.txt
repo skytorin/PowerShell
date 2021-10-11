@@ -1,6 +1,1 @@
-Get-FileHash -Path "F:\Sql Server Backups\SHK2\*.bak" -Algorithm MD5 | Format-List | Out-File md5_20190921.txt
-
-
-
-
-Get-FileHash -Path "D:\TEST\*.png" -Algorithm MD5 | Format-List | Out-File "D:\TEST2\Checksumm_12_02_2020_17_58_00.md5"
+Get-FileHash -Path "C:\Backups\*.bak" -Algorithm MD5 | Format-List | Out-File Checksumm_MD5_20190921.txt
