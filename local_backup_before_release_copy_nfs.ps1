@@ -1,4 +1,7 @@
-### Скрипт удаляет на сетевом хранилище все старые релизные бэкапы и копирует новые из локальной папки сервера 
+### Description: Скрипт удаляет на сетевом хранилище все старые релизные бэкапы и копирует новые из локальной папки сервера
+### Autor: Sergeev Nick
+### Date: 20.09.2021 
+
 $ServerName=$env:computername 
 
 if ($ServerName -eq 'IOSERVER-SQL') {
@@ -24,6 +27,10 @@ if ($ServerName -eq 'IOSERVER-SQL') {
 	elseif ($ServerName -eq 'IOSERVER-SQL17') {
 		$LocalPathName = 'D:\SQLBackup\Before_Release\'
 		$NfsPathName = 'Z:\IOSERVER-SQL17_(MSSQL-2017)\'
+	}
+	elseif ($ServerName -eq 'IOSERVER-SQL19') {
+		$LocalPathName = 'E:\Backup\Before_Release\'
+		$NfsPathName = 'Z:\IOSERVER-SQL19_(MSSQL-2019)\'
 	}
 
 Remove-item "$NfsPathName\03_Release_Manual_Backup_Full\*.bak"
