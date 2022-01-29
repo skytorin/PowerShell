@@ -52,7 +52,7 @@ Add-ADGroupMember -Identity "Domain Admins" -Members a.ivanov -MemberTimeToLive 
 Remove-ADGroupMember -Identity TestADGroup -Members user1, user2, user3
 ```
 
-Массовое удаление пользователей из группы по файлу CSV
+Массовое удаление пользователей из группы, указанных в файле CSV
 ```ps
 Import-CSV .\users.csv -Header users | ForEach-Object {Remove-ADGroupMember -Identity ‘TestADGroup’ -members $_.users}
 ```
@@ -81,7 +81,7 @@ Get-ADGroup -Filter {name -like "*admins*"} -Properties Description,info | Selec
 Get-ADGroup -Identity "Domain Admins" -Properties members | Select-Object -ExpandProperty members
 ```
 
-Выести список пользователей в группе Active Directory
+Выести список пользователей в группе AD
 ```ps
 Get-ADGroupMember 'TestADGroup'
 ```
@@ -95,28 +95,10 @@ Get-ADGroupMember 'TestADGroup'| ft name
 Get-ADGroupMember ‘server-admins' -recursive| ft name
 ```
 
-Экспорт списка пользователей, состоящих в определённой группе в CSV файл:
+Экспорт списка пользователей, состоящих в определённой группе, в CSV файл
 ```ps
 Get-ADGroupMember ‘server-admins' -recursive| ft samaccountname| Out-File c:\ps\admins.csv
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
