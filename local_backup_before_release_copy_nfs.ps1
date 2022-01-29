@@ -20,6 +20,10 @@ if ($ServerName -eq 'IOSERVER-SQL') {
 		$LocalPathName = 'E:\Backup\Before_Release\'
 		$NfsPathName = 'Z:\IOSERVER-SQL4_(MSSQL-2017)\'
 	}
+	elseif ($ServerName -eq 'IOSERVER-SQL5') {
+		$LocalPathName = 'E:\Backup\Before_Release\'
+		$NfsPathName = 'Z:\IOSERVER-SQL5_(MSSQL-2019)\'
+	}
 	elseif ($ServerName -eq 'WEBOFFICE') {
 		$LocalPathName = 'E:\Backup\Before_Release\'
 		$NfsPathName = 'Z:\WEBOFFICE_(MSSQL-2016)\'
