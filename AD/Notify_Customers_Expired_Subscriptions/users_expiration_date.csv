@@ -1,0 +1,9 @@
+﻿#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"Name";"SamAccountName";"GivenName";"EmailAddress";"AccountExpirationDate"
+"Администратор";"Администратор";;;
+"Гость";"Гость";;;
+"krbtgt";"krbtgt";;;
+"n.sergeev";"n.sergeev";"Николай Николаевич";"sergeev@neolant-srv.ru";"27.03.2022 0:00:00"
+"Pupkin Vasia";"Pupkin";;"sergeev@neolant-srv.ru";"02.03.2022 0:00:00"
+"neosphere";"neosphere";"neosphere";;
+"demo demo";"demo";"demo";"demo@neolant.com";"01.02.2022 0:00:00"

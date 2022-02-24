@@ -1,0 +1,3 @@
+FirstName,LastName,EmailAddress,OU,samAccountName,Description,Title,City,Company,OfficePhone,AccountExpirationDate,Password
+demo,demo,demo@demo.com,"CN=Users,DC=neo,DC=users",demo,Description,Manager,Moscow,SIA,77-77-77,01.02.2022,password
+
