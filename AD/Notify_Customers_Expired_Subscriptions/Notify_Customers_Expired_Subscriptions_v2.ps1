@@ -2,8 +2,8 @@
 $Global:FIRST_ALERT = 30
 $Global:SECOND_ALERT = 5
 #$Global:DAYS_ALERT = ""
-$Global:From = "neosphera@neolant.com"
-$Global:To1 = "nick555@bk.ru"
+$Global:From = "email@from"
+$Global:To1 = "email@to"
 #$Global:To2 = ""
 #$Global:To3 = ""
 #$Global:To4 = ""

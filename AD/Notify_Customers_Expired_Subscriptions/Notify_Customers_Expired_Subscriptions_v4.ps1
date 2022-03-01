@@ -1,9 +1,9 @@
 ﻿$EXP_CSV = "C:\temp\users_expiration_date.csv"
 $Global:FIRST_ALERT = 30
 $Global:SECOND_ALERT = 5
-$Global:From = "neosphera@neolant.com"
+$Global:From = "email@from"
 #$Global:To = "Значение из AD"
-$Global:Cc = "nick555@bk.ru","n.sergeev@neolant.com"
+$Global:Cc = "email@to_1","email@to_2"
 #$Global:Bcc = ""
 $Global:SMTPServer = "mail.loc" 
 $Global:Subject = "Истечение подписки на техническую поддержку продуктов экосистемы НЕОСИНТЕЗ"

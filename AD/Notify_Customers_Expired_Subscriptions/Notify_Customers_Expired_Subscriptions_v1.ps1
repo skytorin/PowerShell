@@ -1,7 +1,7 @@
 ﻿$EXP_CSV = "C:\temp\users_expiration_date.csv"
 $FIRST_ALERT = 30
 $SECOND_ALERT = 5
-$Global:From = "neosphera@neolant.com"
+$Global:From = "email@from"
 #$Global:To1 = $_.EmailAddress
 #$Global:To2 = ""
 #$Global:To3 = ""
