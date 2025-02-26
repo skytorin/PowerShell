@@ -28,3 +28,18 @@ wsl --set-version <distribution name> <versionNumber>
 
 # WSL2 как архитектура по умолчанию
 wsl --set-default-version 2
+
+---
+# Освободить место на диске WSL2
+docker system prune --all           # удаление неиспользуемых Docker-образов
+sudo apt-get clean                  # удаление неиспользуемых системных пакетов
+sudo apt-get autoclean              # удаление неиспользуемых системных пакетов
+sudo apt-get autoremove             # удаление неиспользуемых системных пакетов
+wsl.exe --list --verbose            # получаем список виртуальных машин
+wsl.exe --terminate Ubuntu-20.04    # останавливаем нужную
+diskpart                            # запускаем дисковую утилиту
+select vdisk file=C:\Users\root\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\ext4.vhdx    # указываем путь к файлу диска
+compact vdisk                       # сокращает физический размер динамического расширения виртуального жесткого диска
+select vdisk file=C:\Users\root\AppData\Local\Docker\wsl\data\ext4.vhdx                                                                 # указываем путь к диску Docker
+compact vdisk                       # сокращает физический размер динамического расширения виртуального жесткого диска
+---
