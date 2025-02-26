@@ -1,8 +1,27 @@
-# Список дистрибутивов и версия WSL
+# Установка WSL
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
+
+# Версия WSL
+wsl -v
+wsl.exe --version
+
+# Текущий статус
+wsl --status
+
+# Список доступных к установке дистрибутивов
+wsl.exe --list --online
+
+# Установка выбранного дистрибутива
+wsl.exe --install Ubuntu
+
+# Список установленных дистрибутивов и версия WSL
 wsl --list --verbose
 
-# Останов WSL
+# Останов/перезапуск WSL
 wsl --shutdown
+
+# Остановка выбранной ВМ
+wsl.exe --terminate Ubuntu-20.04
 
 # Переопределение версии WSL для дистрибутива
 wsl --set-version <distribution name> <versionNumber>
